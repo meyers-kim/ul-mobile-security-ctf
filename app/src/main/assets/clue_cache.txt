@@ -1,0 +1,4 @@
+Belval Incident Cache
+====================
+The cache service writes diagnostics as Base64 when the normal viewer is offline.
+RkxBR3thc3NldF9jYWNoZV91bnBhY2tlZH0=

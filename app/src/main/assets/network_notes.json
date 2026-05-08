@@ -1,0 +1,5 @@
+{
+  "service": "belval-campus-sync",
+  "endpoint": "http://example.com/",
+  "hint": "For this challenge, the request headers matter more than the response body."
+}

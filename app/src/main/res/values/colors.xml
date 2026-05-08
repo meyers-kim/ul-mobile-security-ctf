@@ -1,0 +1,6 @@
+<resources>
+    <color name="ul_blue">#002F6C</color>
+    <color name="ul_red">#E30613</color>
+    <color name="ctf_background">#F4F7FB</color>
+    <color name="ctf_text">#152238</color>
+</resources>

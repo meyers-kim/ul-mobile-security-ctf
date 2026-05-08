@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">UL Mobile Security CTF</string>
+    <string name="course_name">Security of Mobiles</string>
+    <string-array name="resource_fragments">
+        <item>SYNT{</item>
+        <item>erfbhepr_</item>
+        <item>neenl_</item>
+        <item>ernffrzoyrq}</item>
+    </string-array>
+</resources>

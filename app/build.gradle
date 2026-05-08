@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'lu.uni.mobilectf'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'lu.uni.mobilectf'
+        minSdk 24
+        targetSdk 35
+        versionCode 2
+        versionName '2.0'
+    }
+}

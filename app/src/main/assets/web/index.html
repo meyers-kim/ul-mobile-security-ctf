@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Belval Incident Console</title>
+    <script src="app.js"></script>
+    <style>
+        body { font-family: sans-serif; margin: 20px; background: #f4f7fb; color: #152238; }
+        .card { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        button { padding: 10px 14px; border-radius: 8px; border: 0; background: #002F6C; color: white; }
+        code { background: #eef2f7; padding: 2px 6px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h2>Belval Incident Console</h2>
+    <p>The normal dashboard is locked. Analysts should inspect the local JavaScript bundle.</p>
+    <button onclick="document.getElementById('out').innerText = reveal('guest')">Guest check</button>
+    <p id="out">No console command executed.</p>
+</div>
+</body>
+</html>
