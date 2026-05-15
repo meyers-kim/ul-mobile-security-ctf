@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TapSequenceActivity extends Activity {
+
     private final List<String> sequence = new ArrayList<>();
     private final List<String> expected = Arrays.asList("N", "E", "N", "W", "S", "E");
     private TextView status;
@@ -17,28 +18,64 @@ public class TapSequenceActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LinearLayout root = Ui.base(this, "Tap Sequence", "A sensor keypad was replaced with a direction pad.");
+
+        LinearLayout root = Ui.base(
+                this,
+                "Tap Sequence",
+                "A sensor keypad was replaced with a direction pad."
+        );
+
         LinearLayout card = Ui.card(this, root);
-        Ui.text(this, card, "Hint: the correct route is hidden in the app logic and can also be found by observing the state machine.");
+
+        Ui.text(
+                this,
+                card,
+                "Hint: the correct route is hidden in the app logic and can also be found by observing the state machine."
+        );
+
         status = Ui.text(this, card, "Current sequence: empty");
 
         Ui.button(this, card, "North", v -> press("N"));
         Ui.button(this, card, "East", v -> press("E"));
         Ui.button(this, card, "South", v -> press("S"));
         Ui.button(this, card, "West", v -> press("W"));
+
         Ui.secondaryButton(this, card, "Reset", v -> {
             sequence.clear();
             status.setText("Current sequence: empty");
         });
     }
 
+    private String decodeFlag() {
+
+        String sequence = "FLAG{tap_sequence_debug_mode}";
+
+        int[] data = {
+                117, 110, 108, 111, 99, 107, 101, 100,
+                95, 116, 97, 112, 95, 115, 101, 113,
+                117, 101, 110, 99, 101, 95, 114, 101,
+                112, 108, 97, 121, 101, 100
+        };
+
+        StringBuilder out = new StringBuilder();
+
+        for (int v : data) {
+            out.append((char) (v));
+        }
+
+        return "FLAG{" + out + "}";
+    }
+
     private void press(String value) {
+
         sequence.add(value);
+
         if (sequence.size() > expected.size()) {
             sequence.remove(0);
         }
+
         if (sequence.equals(expected)) {
-            status.setText("Unlocked: FLAG{tap_sequence_replayed}");
+            status.setText("Unlocked: " + decodeFlag());
         } else {
             status.setText("Current sequence: " + sequence);
         }
