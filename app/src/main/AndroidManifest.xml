@@ -25,7 +25,8 @@
         <activity android:name=".ResourceManifestActivity" />
         <activity android:name=".StorageLogActivity" />
         <activity android:name=".ProviderChallengeActivity" />
-        <activity android:name=".InstrumentationLabActivity" />
+        <activity android:name=".InstrumentationLabActivity"
+            android:exported="true" />
 
         <provider
             android:name=".CampusNotesProvider"

@@ -16,9 +16,8 @@ public class StorageLogActivity extends Activity {
         super.onCreate(savedInstanceState);
         LinearLayout root = Ui.base(this, "Storage and Logs", "Forensic traces are sometimes left on the device.");
         LinearLayout card = Ui.card(this, root);
-        Ui.text(this, card, "Hint 1: create the incident cache, then inspect the app database directory with adb run-as on a debug build.");
-        Ui.text(this, card, "Hint 2: some diagnostics are only visible in Logcat with tag CampusCTF.");
-        Ui.text(this, card, "Hint 3: an exported broadcast receiver is declared in the manifest.");
+        Ui.text(this, card, "Hint 1: some diagnostics are only visible in Logcat with tag CampusCTF.");
+        Ui.text(this, card, "Hint 2: an exported broadcast receiver is declared in the manifest.");
         status = Ui.text(this, card, "No action yet.");
 
         Ui.button(this, card, "Create incident cache", v -> createIncidentCache());
